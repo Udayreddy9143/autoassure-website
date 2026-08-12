@@ -1,0 +1,100 @@
+.hero {
+  padding-top: 168px;
+  padding-bottom: 140px;
+  min-height: 640px;
+  display: flex;
+  align-items: center;
+}
+
+.hero-copy {
+  max-width: 640px;
+}
+
+.hero-title {
+  font-size: clamp(40px, 6vw, 66px);
+  margin-top: 16px;
+  letter-spacing: -0.02em;
+  color: #fbf8ef;
+}
+
+.hero-subtitle {
+  margin-top: 20px;
+  font-size: 18px;
+  max-width: 520px;
+}
+
+.hero-actions {
+  display: flex;
+  gap: 16px;
+  margin-top: 32px;
+  flex-wrap: wrap;
+}
+
+.pain-card h3 {
+  font-size: 18px;
+  margin-bottom: 10px;
+}
+
+.how-it-works-layout {
+  display: grid;
+  grid-template-columns: 1.1fr 0.9fr;
+  gap: 48px;
+  align-items: center;
+}
+
+.steps-list {
+  display: flex;
+  flex-direction: column;
+  gap: 28px;
+}
+
+.step-card {
+  display: flex;
+  gap: 20px;
+  align-items: flex-start;
+}
+
+.step-number {
+  font-family: "Fraunces", serif;
+  font-size: 30px;
+  font-weight: 600;
+  flex-shrink: 0;
+  line-height: 1.2;
+}
+
+.step-card h3 {
+  font-size: 19px;
+}
+
+.step-card p {
+  margin-top: 6px;
+}
+
+.how-it-works-photo {
+  width: 100%;
+  height: 100%;
+  min-height: 360px;
+  object-fit: cover;
+  border-radius: var(--radius);
+  border: 1px solid var(--card-border);
+}
+
+.photo-section .cta-banner {
+  background: transparent;
+}
+
+@media (max-width: 900px) {
+  .how-it-works-layout {
+    grid-template-columns: 1fr;
+  }
+  .how-it-works-photo {
+    min-height: 260px;
+  }
+}
+
+@media (max-width: 720px) {
+  .hero {
+    padding-top: 130px;
+    padding-bottom: 90px;
+  }
+}

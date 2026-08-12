@@ -1,0 +1,30 @@
+.case-list {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+}
+
+.case-card {
+  display: flex;
+  flex-direction: column;
+}
+
+.case-block {
+  margin-top: 16px;
+}
+
+.case-label {
+  display: block;
+  font-size: 12px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--ink);
+  margin-bottom: 4px;
+}
+
+@media (max-width: 900px) {
+  .case-list {
+    grid-template-columns: 1fr;
+  }
+}

@@ -1,0 +1,14 @@
+# frontend
+frontend/node_modules/
+frontend/dist/
+
+# backend
+backend/target/
+backend/data/
+backend/src/main/resources/application-secrets.properties
+
+# OS / editor
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/

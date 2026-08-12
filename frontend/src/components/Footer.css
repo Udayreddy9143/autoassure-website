@@ -1,0 +1,62 @@
+.footer {
+  margin-top: auto;
+  background: var(--ink);
+  color: #d9d5c3;
+  padding: 64px 0 0;
+}
+
+.footer-inner {
+  display: grid;
+  grid-template-columns: 1.4fr 1fr 1fr;
+  gap: 40px;
+  padding-bottom: 40px;
+}
+
+.footer .brand {
+  font-family: "Fraunces", serif;
+  font-weight: 600;
+  font-size: 21px;
+  color: #fbf8ef;
+}
+
+.footer p {
+  color: #b7b19a;
+}
+
+.footer-col {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  font-size: 14px;
+  color: #c7c2ab;
+}
+
+.footer-col a {
+  color: #c7c2ab;
+}
+
+.footer-col a:hover {
+  color: #fbf8ef;
+}
+
+.footer-heading {
+  color: #fbf8ef;
+  font-weight: 600;
+  font-size: 12.5px;
+  text-transform: uppercase;
+  letter-spacing: 0.07em;
+  margin-bottom: 4px;
+}
+
+.footer-bottom {
+  border-top: 1px solid rgba(251, 248, 239, 0.12);
+  padding: 20px 0;
+  font-size: 13px;
+  color: #a19c86;
+}
+
+@media (max-width: 720px) {
+  .footer-inner {
+    grid-template-columns: 1fr;
+  }
+}
