@@ -1,11 +1,10 @@
 services:
   - type: web
     name: autoassure-api
-    runtime: java
+    runtime: docker
     rootDir: backend
+    dockerfilePath: ./Dockerfile
     plan: free
-    buildCommand: mvn -q clean package -DskipTests
-    startCommand: java -jar target/api-0.0.1-SNAPSHOT.jar
     envVars:
       - key: H2_CONSOLE_ENABLED
         value: "false"
