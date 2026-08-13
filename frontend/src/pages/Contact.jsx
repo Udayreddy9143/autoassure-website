@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { submitLead } from "../lib/api";
 import Button from "../components/Button";
 import "./Contact.css";
@@ -10,11 +10,22 @@ const REASONS = [
 ];
 
 const INITIAL_FORM = { name: "", email: "", company: "", message: "" };
+const SLOW_NOTICE_DELAY_MS = 6000;
 
 export default function Contact() {
   const [reason, setReason] = useState("BOOK_CALL");
   const [form, setForm] = useState(INITIAL_FORM);
   const [status, setStatus] = useState("idle");
+  const [slowNotice, setSlowNotice] = useState(false);
+
+  useEffect(() => {
+    if (status !== "submitting") {
+      setSlowNotice(false);
+      return;
+    }
+    const timer = setTimeout(() => setSlowNotice(true), SLOW_NOTICE_DELAY_MS);
+    return () => clearTimeout(timer);
+  }, [status]);
 
   async function handleSubmit(event) {
     event.preventDefault();
@@ -105,6 +116,12 @@ export default function Contact() {
                 <Button type="submit" variant="primary">
                   {status === "submitting" ? "Sending..." : "Send message"}
                 </Button>
+                {slowNotice && (
+                  <p style={{ fontSize: 13 }}>
+                    Still working — our server is waking up from idle, this can take up to a
+                    minute. Hang tight.
+                  </p>
+                )}
               </form>
             )}
           </div>
