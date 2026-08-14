@@ -3,7 +3,6 @@ package com.autoassure.api.controller;
 import com.autoassure.api.dto.LeadRequest;
 import com.autoassure.api.model.Lead;
 import com.autoassure.api.repository.LeadRepository;
-import com.autoassure.api.service.LeadNotificationService;
 import jakarta.validation.Valid;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -21,11 +20,9 @@ public class LeadController {
     private static final Logger log = LoggerFactory.getLogger(LeadController.class);
 
     private final LeadRepository leadRepository;
-    private final LeadNotificationService notificationService;
 
-    public LeadController(LeadRepository leadRepository, LeadNotificationService notificationService) {
+    public LeadController(LeadRepository leadRepository) {
         this.leadRepository = leadRepository;
-        this.notificationService = notificationService;
     }
 
     @PostMapping("/api/leads")
@@ -40,7 +37,6 @@ public class LeadController {
 
         leadRepository.save(lead);
         log.info("New {} lead from {} <{}>", lead.getLeadType(), lead.getName(), lead.getEmail());
-        notificationService.notifyNewLead(lead);
 
         return ResponseEntity.status(HttpStatus.CREATED).build();
     }

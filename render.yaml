@@ -8,7 +8,5 @@ services:
     envVars:
       - key: H2_CONSOLE_ENABLED
         value: "false"
-      - key: RESEND_API_KEY
-        sync: false
       - key: CORS_ALLOWED_ORIGINS
         sync: false

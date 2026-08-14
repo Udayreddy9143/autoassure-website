@@ -70,6 +70,19 @@
   margin-top: 4px;
 }
 
+.modal-whatsapp-alt {
+  margin-top: 18px;
+  text-align: center;
+  font-size: 13px;
+  color: var(--ink-dim);
+}
+
+.modal-whatsapp-alt a {
+  color: var(--olive-dark);
+  font-weight: 600;
+  text-decoration: underline;
+}
+
 .modal-success {
   text-align: center;
   display: flex;

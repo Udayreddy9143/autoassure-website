@@ -8,6 +8,17 @@ import "./LeadModal.css";
 const INITIAL_FORM = { name: "", email: "", company: "", message: "" };
 const SLOW_NOTICE_DELAY_MS = 6000;
 
+const WHATSAPP_PREFILL = {
+  BOOK_CALL: "Hi! I'd like to book a free automation audit call.",
+  QUOTE_REQUEST: "Hi! I'd like to request a quote for an automation project.",
+  CHECKLIST_DOWNLOAD: "Hi! Could you send me the Automation Readiness Checklist?",
+};
+
+function whatsappLink(leadType) {
+  const text = encodeURIComponent(WHATSAPP_PREFILL[leadType] ?? "Hi! I'd like to get in touch.");
+  return `https://wa.me/919154175672?text=${text}`;
+}
+
 export default function LeadModal() {
   const { leadType, copy, closeModal } = useLeadModal();
   const [form, setForm] = useState(INITIAL_FORM);
@@ -140,6 +151,13 @@ export default function LeadModal() {
                     </p>
                   )}
                 </form>
+
+                <p className="modal-whatsapp-alt">
+                  Prefer WhatsApp?{" "}
+                  <a href={whatsappLink(leadType)} target="_blank" rel="noreferrer">
+                    Message us directly
+                  </a>
+                </p>
               </>
             )}
           </motion.div>
